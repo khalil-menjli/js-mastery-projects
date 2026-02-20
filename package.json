@@ -1,0 +1,24 @@
+{
+  "name": "js-mastery-projects",
+  "version": "1.0.0",
+  "type": "module", 
+  "description": "30 vanilla JavaScript projects built from scratch to master the language deeply.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khalil-menjli/js-mastery-projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khalil-menjli/js-mastery-projects/issues"
+  },
+  "homepage": "https://github.com/khalil-menjli/js-mastery-projects#readme",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
