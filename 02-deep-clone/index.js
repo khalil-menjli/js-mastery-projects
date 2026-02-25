@@ -1,15 +1,16 @@
-function deepClone(obj, seen = new WeakMap()) {
-  if (typeof obj !== "object" || obj === null) return obj;
+export function deepClone(obj, seen = new WeakMap()) {
+  if (obj === null || typeof obj !== "object") {
+    return obj;
+  }
   if (seen.has(obj)) return seen.get(obj);
   let copy;
-
   if (Array.isArray(obj)) {
     copy = [];
   } else if (obj instanceof Map) {
     copy = new Map();
     seen.set(obj, copy);
     obj.forEach((value, key) => {
-      copy.set(deepClone(key,seen), deepClone(value, seen));
+      copy.set(deepClone(key, seen), deepClone(value, seen));
     });
     return copy;
   } else if (obj instanceof Set) {
@@ -27,7 +28,7 @@ function deepClone(obj, seen = new WeakMap()) {
     copy = Object.create(Object.getPrototypeOf(obj));
   }
   seen.set(obj, copy);
-  for (let key in obj) {
+  for (const key in obj) {
     copy[key] = deepClone(obj[key], seen);
   }
   return copy;
